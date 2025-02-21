@@ -1,0 +1,33 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'com.jacopomii.posteitalianedisabletmx'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.jacopomii.posteitalianedisabletmx"
+        minSdk 19
+        targetSdk 35
+        versionCode 100
+        versionName "1.00"
+    }
+
+    buildTypes {
+        release {
+            debuggable false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compileOnly 'de.robv.android.xposed:api:82'
+}

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PosteItalianeDisableTMX</string>
+    <string name="xposed_description">Disable ThreatMetrix monitoring in the Poste Italiane app</string>
+</resources>
