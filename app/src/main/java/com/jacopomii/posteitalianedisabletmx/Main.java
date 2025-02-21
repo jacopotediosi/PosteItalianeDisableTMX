@@ -11,6 +11,20 @@ public class Main implements IXposedHookLoadPackage {
         if (!lpparam.packageName.equals("com.posteitaliane.spim"))
             return;
 
+        /*
+            Code snippet:
+
+            public final void manageTmx(Activity activity, n.e tmxActivityForResult) {
+                n.h(activity, "activity");
+                n.h(tmxActivityForResult, "tmxActivityForResult");
+                TmxConfig tmxConfig = getTmxConfig();
+                if (tmxConfig == null || !a1.n.n2(activity) || !new AppConfigHelper().isFeatureEnabled(UtilsConstants.TMX_FEATURE_KEY)) {
+                    m665startHomeActivityIoAF18A(activity);
+                    return;
+                }
+            ...
+        */
+
         XposedHelpers.findAndHookMethod(
             "it.posteitaliane.df_sessionmanager.init.LibraryHelper",
             lpparam.classLoader,
